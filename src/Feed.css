@@ -1,3 +1,24 @@
+
+
 .feed{
-  padding-left: 10px;
+  flex: 0.4;
+  min-width: fit-content;
+  border-right: 1px solid var(--app-background);
+  overflow-y: scroll;
+}
+
+.feed__header{
+  position: sticky;
+  top: 0;
+  background-color: var(--app-color);
+  padding-left: 20px;
+  color:white;
+  z-index: 100;
+  font-size: 20px;
+  height: 50px;
+}
+
+/* hide scrollbar */
+.feed::-webkit-scrollbar{
+  display: none;
 }
