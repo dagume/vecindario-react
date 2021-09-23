@@ -1,0 +1,23 @@
+.sidebar{
+  border-right: 1px solid var(--app-background);
+  min-width: 250px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sidebar__icon{
+  color: var(--app-color);
+  font-size: 40px !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sidebar__post{
+  background-color: var(--app-color) !important;
+  border: none;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  height: 50px !important;
+}
+
