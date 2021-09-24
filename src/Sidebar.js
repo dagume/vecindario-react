@@ -1,6 +1,8 @@
 import React from 'react';
 import './Sidebar.css';
 import SidebarOption from './SidebarOption';
+import { Link } from 'react-router-dom';
+
 // Icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
 import PersonIcon from '@material-ui/icons/Person';
@@ -11,18 +13,20 @@ import { Button } from "@material-ui/core";
 function Sidebar() {
   return (
     <div className="sidebar">
+      <Link to="/">
       <HomeWorkIcon className="sidebar__icon"/>
+      </Link>
       {/* Icon */}
       
-      <SidebarOption Icon={PostAddIcon} text="Publicar post"/>
-      <SidebarOption Icon={PersonIcon} text="Mi perfil"/>
-      <SidebarOption Icon={MessageIcon} text="Mensaje"/>
-      <SidebarOption Icon={GroupIcon} text="Grupos"/>
+      <SidebarOption path="/post" Icon={PostAddIcon} text="Publicar post"/>
+      <SidebarOption path="#" Icon={PersonIcon} text="Mi perfil"/>
+      <SidebarOption path="#" Icon={MessageIcon} text="Mensaje"/>
+      <SidebarOption path="#" Icon={GroupIcon} text="Grupos"/>
       {/* SidebarOption */}
 
 
       {/* Botton */}
-      <Button variant="outlined" className="sidebar__post" fullWidth>Post</Button>
+      {/* <Button variant="outlined" className="sidebar__post" fullWidth>Post</Button> */}
     </div>
   )
 }

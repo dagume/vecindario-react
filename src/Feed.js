@@ -25,6 +25,7 @@ function Feed() {
         {posts.map((post) => (
           <Post
             key={post.id}
+            id={post.id}
             name={post.name}
             content={post.content}
             owner_email={post.owner_email}

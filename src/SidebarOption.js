@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./SidebarOption.css"
-function SidebarOption({text, Icon}) {
+function SidebarOption({path, text, Icon}) {
   return (
     <div className="sidebarOption">
-      <Icon />
-      <h2>{text}</h2>
+        <Icon />
+      <Link className="link_opcion" to={path}>
+        <h2>{text}</h2>
+      </Link>
     </div>
   )
 }
