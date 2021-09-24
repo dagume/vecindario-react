@@ -10,6 +10,7 @@ import PostAddIcon from '@material-ui/icons/PostAdd';
 import MessageIcon from '@material-ui/icons/Message';
 import GroupIcon from '@material-ui/icons/Group';
 import { Button } from "@material-ui/core";
+
 function Sidebar() {
   return (
     <div className="sidebar">
@@ -23,7 +24,6 @@ function Sidebar() {
       <SidebarOption path="#" Icon={MessageIcon} text="Mensaje"/>
       <SidebarOption path="#" Icon={GroupIcon} text="Grupos"/>
       {/* SidebarOption */}
-
 
       {/* Botton */}
       {/* <Button variant="outlined" className="sidebar__post" fullWidth>Post</Button> */}

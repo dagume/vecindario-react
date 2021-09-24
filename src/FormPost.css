@@ -1,0 +1,47 @@
+.formpost{
+  padding-bottom: 10px;
+  
+  padding-right: 10px;
+}
+.formpost > form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.form_input {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.form_input > input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+}
+.form_button{
+  background-color: var(--app-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  width: 902.78px;
+  height: 50px !important;
+  margin-top: 20px !important;
+  margin-left: 10px !important;
+}
+
+.form_textarea{
+  flex: 1;
+  margin-left: 20px;
+  font-size: 15px;
+  resize: none;
+  margin-bottom: 10px;
+}
+.form_input_mail{
+  flex: 1;
+  margin-left: 20px;
+  font-size: 15px;
+  margin-bottom: 10px;
+
+}
