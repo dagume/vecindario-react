@@ -9,6 +9,12 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 const Post = forwardRef(
   ({ id, name, content, owner_email, comment_counter, like_counter, dislike_counter, createdAt }, ref) => {
     
+  const [likeCounterState, setLikeCounterstate] = React.useState(like_counter);
+  const [dislikeCounterState, setDislikeCounterstate] = React.useState(dislike_counter);
+
+  const [showLikeButton, setShowLikeButton] = React.useState(true)
+  const [showDislikeButton, setshowDislikeButton] = React.useState(true)
+
 
   const requestOptions = {
     method: 'POST',
@@ -17,14 +23,31 @@ const Post = forwardRef(
   };
 
   const addLike = () => {
+    setLikeCounterstate(prevState =>  prevState + 1)
+    setShowLikeButton(false)
   fetch('https://dry-dusk-90160.herokuapp.com/api/post/add-like', requestOptions)
     .then(response => response.json())
-    // .then(data => data.mesagge);
   }
+
+  const removeLike = () => {
+    setLikeCounterstate(prevState =>  prevState - 1)
+    setShowLikeButton(true)
+  fetch('https://dry-dusk-90160.herokuapp.com/api/post/remove-like', requestOptions)
+    .then(response => response.json())
+  }
+
   const addDislike = () => {
+    setDislikeCounterstate(prevState =>  prevState + 1)
+    setshowDislikeButton(false)
   fetch('https://dry-dusk-90160.herokuapp.com/api/post/add-dislike', requestOptions)
     .then(response => response.json())
-    // .then(data => data.mesagge);
+  }
+
+  const removeDislike = () => {
+    setDislikeCounterstate(prevState =>  prevState - 1)
+    setshowDislikeButton(true)
+  fetch('https://dry-dusk-90160.herokuapp.com/api/post/remove-dislike', requestOptions)
+    .then(response => response.json())
   }
 
   return (
@@ -49,13 +72,13 @@ const Post = forwardRef(
         <div className="post__footer">
           <div className="footerOptions">
             {/* <Button onClick=""> */}
-              <ThumbUpIcon onClick={addLike} fontSize="small" />
+              <ThumbUpIcon onClick={showLikeButton ? addLike : removeLike} fontSize="small" />
             {/* </Button> */}
-            <h4>{like_counter}</h4>
+            <h4>{likeCounterState}</h4>
           </div>
           <div className="footerOptions">
-            <ThumbDownIcon onClick={addDislike} fontSize="small" />
-            <h4>{dislike_counter}</h4>
+            <ThumbDownIcon onClick={showDislikeButton ? addDislike : removeDislike} fontSize="small" />
+            <h4>{dislikeCounterState}</h4>
           </div>
           <div className="footerOptions">
             <ChatBubbleOutlineIcon fontSize="small" />
