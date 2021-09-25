@@ -3,6 +3,7 @@ import Post from './Post';
 import FlipMove from "react-flip-move";
 import { Route } from 'react-router-dom';
 import FormPost from './FormPost'
+import Comment from './Comment'
 
 
 
@@ -42,11 +43,18 @@ function Feed() {
         {/* Post */}
       </Route>
 
-      <Route exact path="/post">
+      <Route path="/post">
         <div className="feed__header">
           <h2>Crear post</h2>
         </div>
         <FormPost />
+      </Route>
+
+      <Route path="/comment">
+        <div className="feed__header">
+          <h2>Crear Comentario</h2>
+        </div>
+        <Comment />
       </Route>
 
     </div>

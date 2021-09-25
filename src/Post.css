@@ -44,3 +44,7 @@
 .footerOptions > h4{
   margin-left: 10px;
 }
+
+.link_opcion{
+  text-decoration: none;
+}

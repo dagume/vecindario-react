@@ -4,6 +4,7 @@ import { Avatar } from "@material-ui/core";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import { Link } from 'react-router-dom';
 
 
 const Post = forwardRef(
@@ -80,10 +81,13 @@ const Post = forwardRef(
             <ThumbDownIcon onClick={showDislikeButton ? addDislike : removeDislike} fontSize="small" />
             <h4>{dislikeCounterState}</h4>
           </div>
-          <div className="footerOptions">
-            <ChatBubbleOutlineIcon fontSize="small" />
-            <h4>{comment_counter}</h4>
-          </div>
+          {/* Como enviar el id del post al que le vamos a generar un comentario */}
+          <Link to="/comment" className="link_opcion">
+            <div className="footerOptions">
+              <ChatBubbleOutlineIcon fontSize="small" />
+              <h4>{comment_counter}</h4>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
